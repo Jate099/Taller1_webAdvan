@@ -4,26 +4,33 @@ import { Grid } from '@material-ui/core';
 import Planet from '../../Components/Planet/Planet';
 import Size from '../../Components/Size/Size';
 
+const settings = {
+    value: 0,
+}
+
+export const settingsContext = React.createContext(settings);
+
 function Main() {
 
     const classes = useStyles();
 
-    const [size, setSize] = React.useState(100);
+    //const [value, setValue] = React.useState(100);
     
-    const handleSize = (event) => {
-        setSize(parseInt(event.target.value));
+    /*const handleSize = (event) => {
+        setValue(parseInt(event.target.value));
         console.log(event.target.value);
-    }
+    }*/
 
     return (
         <div className={classes.content}>
             <section className={classes.menu}>
-                <Size onInput={handleSize}/>
+                <Size/>
+                
             </section>
 
             <section className={classes.visualizer}>
                 <Planet
-                tam={size}/>
+                tam={settings.value}/>
             </section>
 
         </div>
