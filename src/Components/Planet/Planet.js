@@ -7,7 +7,11 @@ function Planet(props) {
 
   return (
     <div className={classes.planet}
-      style={{ height: props.tam, width: props.tam, background: props.color }}>
+      style={{ 
+        height: props.tam, 
+        width: props.tam, 
+        background: props.color, 
+        backgroundImage: `linear-gradient(to bottom right, ${props.color1}, ${props.color2})`}}>
     </div>
   );
 }
