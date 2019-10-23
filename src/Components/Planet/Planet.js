@@ -10,8 +10,8 @@ function Planet(props) {
       style={{ 
         height: props.tam, 
         width: props.tam, 
-        background: props.color, 
-        backgroundImage: `linear-gradient(to bottom right, ${props.color1}, ${props.color2})`}}>
+        //background: props.color, 
+        backgroundImage: `linear-gradient(${props.color1}, ${props.color2})`}}>
     </div>
   );
 }

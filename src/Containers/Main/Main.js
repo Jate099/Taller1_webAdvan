@@ -19,28 +19,33 @@ function Main() {
 
     const [value, setValue] = React.useState(100);
     const [color, setColor] = React.useState('#555555');
+    const [color2, setColor2] = React.useState('#555555');
     
     const handleSize = (event) => {
         setValue(parseInt(event.target.value));
         console.log(event.target.value);
     }
 
-    const handleColor = (color) => {
+    const handleColor1 = (color) => {
         setColor(color.hex);
+    }
+
+    const handleColor2 = (color) => {
+        setColor2(color.hex);
     }
 
     return (
         <div className={classes.content}>
             <section className={classes.menu}>
                 <Size onInput={handleSize} value={value}/>
-                <HuePicker onChange={handleColor}/>
+                <HuePicker onChange={handleColor1}/>
+                <HuePicker onChange={handleColor2}/>
             </section>
 
             <section className={classes.visualizer}>
                 <Planet 
                 tam={value}
-                color={color}
-                color1={color1}
+                color1={color}
                 color2={color2}/>
             </section>
 
