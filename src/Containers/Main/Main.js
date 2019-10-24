@@ -68,9 +68,10 @@ function Main() {
     return (
         <div className={classes.content}>
             <section className={classes.menu}>
+                <h1>Create your planet</h1>
                 <Size onInput={handleSize} value={value}/>
-                <HuePicker onChange={handleColor1}/>
-                <HuePicker onChange={handleColor2}/>
+                <Color onChange={handleColor1} colorType='Color1'/>
+                <Color onChange={handleColor2} colorType='Color2'/>
                 <button onClick={handleSave}>Save</button>
                 <a href="/result"><button>Proceed to checkout</button></a>
             </section>
@@ -99,17 +100,17 @@ const useStyles = makeStyles(theme => ({
     },
 
     menu: {
-        width: '30%',
+        width: '25%',
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'gray',
+        backgroundColor: 'rgba(125, 98, 231, 1)',
     },
 
     visualizer: {
-        width: '70%',
+        width: '75%',
         height: '100%',
         backgroundColor: 'rgba(18, 13, 43, 1)',
         display: 'flex',

@@ -10,7 +10,7 @@ function Planet(props) {
     <path
       d={
         `M 25,200
-        Q${props.controlPoint} 375, 200
+        Q${props.controlPoint1, props.controlPoint2} 375, 200
       `}
 
       fill="none"
@@ -20,19 +20,26 @@ function Planet(props) {
   );
 
   return (
-    <div className={classes.planet}
-      style={{
-        height: props.tam,
-        width: props.tam,
-        //background: props.color, 
-        backgroundImage: `linear-gradient(${props.color1}, ${props.color2})`
-      }}>
+    <section className={classes.content}>
 
-      <svg viewBox="0 0 200 200" style={{ maxHeight: 400 }}>{path}</svg>
+      <div className={classes.planet}
+        style={{
+          height: props.tam,
+          width: props.tam,
+          //background: props.color, 
+          backgroundImage: `linear-gradient(${props.color1}, ${props.color2})`,
+          boxShadow: `0px 0px 0px ${props.color2}, 0 0 50px ${props.color1}, 0 0 10px ${props.color2}`,
+        }}>
 
-      <svg viewBox="0 0 200 200" style={{ maxHeight: 400 }}>{path}</svg>
+        <svg viewBox="0 0 200 200" style={{ maxHeight: 400 }}>{path}</svg>
 
-    </div>
+        <svg viewBox="0 0 200 200" style={{ maxHeight: 400 }}>{path}</svg>
+
+      </div>
+
+      <p className={classes.pName}>{props.name}</p>
+
+    </section>
   );
 }
 
@@ -44,7 +51,17 @@ const useStyles = makeStyles(theme => ({
     height: '50px',
     background: 'white',
     borderRadius: '100%',
+    border: 'none',
   },
+
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+
+  pName:{
+    color: 'white',
+  }
 
 }));
 

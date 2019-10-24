@@ -1,10 +1,13 @@
 import React from 'react';
-import { SliderPicker } from 'react-color';
+import { SliderPicker, HuePicker } from 'react-color';
 
 function Color(props) {
 
   return (
-         <SliderPicker/>
+    <div>
+      <p>{props.colorType}</p>
+      <HuePicker onChange={props.onChange} value={props.colorValue}/>
+    </div> 
   );
 }
 
