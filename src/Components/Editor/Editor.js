@@ -1,12 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Grid } from '@material-ui/core';
-import Planet from '../../Components/Planet/Planet';
-import Size from '../../Components/Size/Size';
-import Color from '../../Components/Color/Color';
+import Planet from '../Planet/Planet';
+import Size from '../Size/Size';
+import Color from '../Color/Color';
 import { SliderPicker, BlockPicker, HuePicker } from 'react-color';
 import { Link } from 'react-router-dom';
-import Name from '../../Components/Name/Name';
+import Name from '../Name/Name';
 
 
 var planetList = [];
@@ -88,15 +88,6 @@ function Main() {
                 <button className={classes.btnCheck}><Link className={classes.link} to={`/result`}>Proceed to checkout</Link></button>
             </section>
 
-            <section className={classes.visualizer}>
-                <Planet
-                    tam={value}
-                    name={valName}
-                    color1={color}
-                    color2={color2}
-                />
-            </section>
-
         </div>
 
     );
@@ -121,16 +112,6 @@ const useStyles = makeStyles(theme => ({
         alignItems: 'center',
         justifyContent: 'center',
         background: 'rgba(136, 19, 131, 1)',
-    },
-
-    visualizer: {
-        width: '75%',
-        height: '100%',
-        backgroundColor: 'rgba(18, 13, 43, 1)',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
     },
 
     title: {

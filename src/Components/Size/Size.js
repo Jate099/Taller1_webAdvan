@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import { settingsContext } from '../../Containers/Main/Main';
+import { settingsContext } from '../Editor/Main';
 
 function Size(props) {
 
