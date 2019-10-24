@@ -6,6 +6,7 @@ import Size from '../../Components/Size/Size';
 import Color from '../../Components/Color/Color';
 import { SliderPicker, BlockPicker, HuePicker } from 'react-color';
 import { Link } from 'react-router-dom';
+import Name from '../../Components/Name/Name';
 
 
 var planetList = [];
@@ -26,6 +27,7 @@ function Main() {
     const classes = useStyles();
 
     const [value, setValue] = React.useState(100);
+    const [valName, setValName] = React.useState('');
     const [color, setColor] = React.useState('#555555');
     const [color2, setColor2] = React.useState('#555555');
     //const [point, setPoint1] = React.useState('#555555');
@@ -41,6 +43,11 @@ function Main() {
 
     const handleColor2 = (color) => {
         setColor2(color.hex);
+    }
+
+    const handleName = (event) => {
+        setValName(event.target.value);
+        console.log(event.target.value);
     }
 
     /*const handleCurvePoint1 = (even) => {
@@ -60,6 +67,7 @@ function Main() {
             color1: color,
             color2: color2,
             tam: value,
+            name: valName,
         }
 
         planetList.push(object);
@@ -71,6 +79,7 @@ function Main() {
             <section className={classes.menu}>
                 <h1 className={classes.title}>Create your planet</h1>
                 <section className={classes.inputs}>
+                    <Name onChange={handleName} valueName={valName} />
                     <Size onInput={handleSize} value={value} />
                     <Color onChange={handleColor1} colorType='Color1' />
                     <Color onChange={handleColor2} colorType='Color2' />
@@ -82,6 +91,7 @@ function Main() {
             <section className={classes.visualizer}>
                 <Planet
                     tam={value}
+                    name={valName}
                     color1={color}
                     color2={color2}
                 />
@@ -124,7 +134,8 @@ const useStyles = makeStyles(theme => ({
     },
 
     title: {
-        fontWeight: 'bold',
+        fontWeight: '900',
+        fontStyle: 'normal',
         fontSize: '30px',
         color: 'rgba(253, 210, 69, 1)',
     },
@@ -153,7 +164,7 @@ const useStyles = makeStyles(theme => ({
 
     link: {
         color: 'white',
-        fontStyle: 'none',
+        textDecoration: 'none',
     },
 
 }));

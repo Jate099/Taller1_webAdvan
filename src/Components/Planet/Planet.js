@@ -55,11 +55,15 @@ const useStyles = makeStyles(theme => ({
   },
 
   content: {
+    padding: '15px',
     display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     flexDirection: 'column',
   },
 
   pName:{
+    marginTop: '25px',
     color: 'white',
   }
 

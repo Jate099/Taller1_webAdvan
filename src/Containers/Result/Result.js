@@ -21,11 +21,13 @@ function Result() {
 
   let views = [];
   planetList.forEach((planet) => {
-    views.push(<Planet tam={planet.tam} color1={planet.color1} color2={planet.color2} />);
+    views.push(<Planet name={planet.name} tam={planet.tam} color1={planet.color1} color2={planet.color2} />);
   });
 
   return (
     <div className={classes.content}>
+
+      <h1 className={classes.title}>Your planets</h1>
 
       <div className={classes.pContainer}>
         {React.Children.map(views, (view) => {
@@ -34,7 +36,7 @@ function Result() {
       </div>
 
       <button className={classes.clear} onClick={handleClick}>Reset</button>
-      <button className={classes.editor}><Link to={'/main'}>Go back to creator</Link></button>
+      <button className={classes.editor}><Link className={classes.link} to={'/'}>Go back to creator</Link></button>
 
     </div>
   );
@@ -67,18 +69,30 @@ const useStyles = makeStyles(theme => ({
     borderRadius: '15px',
     fontSize: '15px',
     color: 'white',
-},
+  },
 
-editor: {
-  marginTop: '20px',
-  background: 'rgba(70, 193, 164, 1)',
-  width: '100%',
-  height: '5%',
-  border: 'none',
-  borderRadius: '15px',
-  fontSize: '15px',
-  color: 'white',
-},
+  editor: {
+    marginTop: '20px',
+    background: 'rgba(70, 193, 164, 1)',
+    width: '100%',
+    height: '5%',
+    border: 'none',
+    borderRadius: '15px',
+    fontSize: '15px',
+    color: 'white',
+  },
+
+  link: {
+    color: 'white',
+    textDecoration: 'none',
+  },
+
+  title: {
+    fontWeight: '900',
+    fontStyle: 'normal',
+    fontSize: '30px',
+    color: 'rgba(253, 210, 69, 1)',
+  }
 
 }));
 
