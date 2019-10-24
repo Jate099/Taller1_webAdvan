@@ -9,13 +9,12 @@ function Planet(props) {
   const path = (
     <path
       d={
-        `M${props.startPoint}
-        Q${props.controlPoint}
-        C${props.endPoint}
+        `M 25,200
+        Q${props.controlPoint} 375, 200
       `}
 
       fill="none"
-      stroke={props.color1}
+      stroke="hotpink"
       strokeWidth={5}
     />
   );
@@ -31,12 +30,16 @@ function Planet(props) {
 
       <svg viewBox="0 0 200 200" style={{ maxHeight: 400 }}>{path}</svg>
 
+      <svg viewBox="0 0 200 200" style={{ maxHeight: 400 }}>{path}</svg>
+
     </div>
   );
 }
 
 const useStyles = makeStyles(theme => ({
   planet: {
+    display: 'flex',
+    flexDirection: 'column',
     width: '50px',
     height: '50px',
     background: 'white',

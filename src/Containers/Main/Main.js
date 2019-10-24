@@ -7,6 +7,13 @@ import Color from '../../Components/Color/Color';
 import { SliderPicker, BlockPicker, HuePicker } from 'react-color';
 
 
+var planetList = [];
+var temp = localStorage.getItem("planetList");
+
+if(temp !== null){
+    planetList=JSON.parse(temp);
+}
+
 const settings = {
     value: 0,
 }
@@ -20,6 +27,7 @@ function Main() {
     const [value, setValue] = React.useState(100);
     const [color, setColor] = React.useState('#555555');
     const [color2, setColor2] = React.useState('#555555');
+    //const [point, setPoint1] = React.useState('#555555');
     
     const handleSize = (event) => {
         setValue(parseInt(event.target.value));
@@ -34,19 +42,45 @@ function Main() {
         setColor2(color.hex);
     }
 
+    /*const handleCurvePoint1 = (even) => {
+
+    }
+
+    const handleCurvePoint2 = (event) => {
+        
+    }
+
+    const handleCurvePoint3 = (event) => {
+        
+    }*/
+
+    const handleSave = (event) => {
+        var object = {
+            color1: color,
+            color2: color2,
+            tam: value,
+        }
+
+        planetList.push(object);
+        localStorage.setItem("planetList", JSON.stringify(planetList));
+    }
+
     return (
         <div className={classes.content}>
             <section className={classes.menu}>
                 <Size onInput={handleSize} value={value}/>
                 <HuePicker onChange={handleColor1}/>
                 <HuePicker onChange={handleColor2}/>
+                <button onClick={handleSave}>Save</button>
+                <a href="/result"><button>Proceed to checkout</button></a>
             </section>
 
             <section className={classes.visualizer}>
                 <Planet 
                 tam={value}
                 color1={color}
-                color2={color2}/>
+                color2={color2}
+               />
             </section>
 
         </div>
@@ -77,7 +111,7 @@ const useStyles = makeStyles(theme => ({
     visualizer: {
         width: '70%',
         height: '100%',
-        backgroundColor: 'blue',
+        backgroundColor: 'rgba(18, 13, 43, 1)',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
