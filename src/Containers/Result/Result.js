@@ -2,6 +2,7 @@ import React from 'react';
 import Planet from '../../Components/Planet/Planet';
 //import classes from '*.module.scss';
 import { makeStyles } from '@material-ui/styles';
+import { Link } from 'react-router-dom';
 
 var planetList = [];
 var temp = localStorage.getItem("planetList");
@@ -13,6 +14,10 @@ if (temp !== null) {
 function Result() {
 
   const classes = useStyles();
+
+  const handleClick = () => {
+    localStorage.clear();
+  }
 
   let views = [];
   planetList.forEach((planet) => {
@@ -28,6 +33,9 @@ function Result() {
         })}
       </div>
 
+      <button className={classes.clear} onClick={handleClick}>Reset</button>
+      <button className={classes.editor}><Link to={'/main'}>Go back to creator</Link></button>
+
     </div>
   );
 }
@@ -36,6 +44,7 @@ const useStyles = makeStyles(theme => ({
   content: {
     display: 'flex',
     height: '100vh',
+    padding: '15px',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -48,6 +57,28 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  clear: {
+    marginTop: '20px',
+    background: 'rgba(70, 193, 164, 1)',
+    width: '100%',
+    height: '5%',
+    border: 'none',
+    borderRadius: '15px',
+    fontSize: '15px',
+    color: 'white',
+},
+
+editor: {
+  marginTop: '20px',
+  background: 'rgba(70, 193, 164, 1)',
+  width: '100%',
+  height: '5%',
+  border: 'none',
+  borderRadius: '15px',
+  fontSize: '15px',
+  color: 'white',
+},
 
 }));
 

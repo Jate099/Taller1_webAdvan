@@ -5,13 +5,14 @@ import Planet from '../../Components/Planet/Planet';
 import Size from '../../Components/Size/Size';
 import Color from '../../Components/Color/Color';
 import { SliderPicker, BlockPicker, HuePicker } from 'react-color';
+import { Link } from 'react-router-dom';
 
 
 var planetList = [];
 var temp = localStorage.getItem("planetList");
 
-if(temp !== null){
-    planetList=JSON.parse(temp);
+if (temp !== null) {
+    planetList = JSON.parse(temp);
 }
 
 const settings = {
@@ -28,7 +29,7 @@ function Main() {
     const [color, setColor] = React.useState('#555555');
     const [color2, setColor2] = React.useState('#555555');
     //const [point, setPoint1] = React.useState('#555555');
-    
+
     const handleSize = (event) => {
         setValue(parseInt(event.target.value));
         console.log(event.target.value);
@@ -68,20 +69,22 @@ function Main() {
     return (
         <div className={classes.content}>
             <section className={classes.menu}>
-                <h1>Create your planet</h1>
-                <Size onInput={handleSize} value={value}/>
-                <Color onChange={handleColor1} colorType='Color1'/>
-                <Color onChange={handleColor2} colorType='Color2'/>
-                <button onClick={handleSave}>Save</button>
-                <a href="/result"><button>Proceed to checkout</button></a>
+                <h1 className={classes.title}>Create your planet</h1>
+                <section className={classes.inputs}>
+                    <Size onInput={handleSize} value={value} />
+                    <Color onChange={handleColor1} colorType='Color1' />
+                    <Color onChange={handleColor2} colorType='Color2' />
+                </section>
+                <button className={classes.btnSave} onClick={handleSave}>Save</button>
+                <button className={classes.btnCheck}><Link className={classes.link} to={`/result`}>Proceed to checkout</Link></button>
             </section>
 
             <section className={classes.visualizer}>
-                <Planet 
-                tam={value}
-                color1={color}
-                color2={color2}
-               />
+                <Planet
+                    tam={value}
+                    color1={color}
+                    color2={color2}
+                />
             </section>
 
         </div>
@@ -102,11 +105,12 @@ const useStyles = makeStyles(theme => ({
     menu: {
         width: '25%',
         height: '100%',
+        padding: '15px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'rgba(125, 98, 231, 1)',
+        background: 'rgba(136, 19, 131, 1)',
     },
 
     visualizer: {
@@ -118,6 +122,40 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         alignItems: 'center',
     },
+
+    title: {
+        fontWeight: 'bold',
+        fontSize: '30px',
+        color: 'rgba(253, 210, 69, 1)',
+    },
+
+    btnSave: {
+        marginTop: '50px',
+        background: 'rgba(70, 193, 164, 1)',
+        width: '100%',
+        height: '5%',
+        border: 'none',
+        borderRadius: '15px',
+        fontSize: '15px',
+        color: 'white',
+    },
+
+    btnCheck: {
+        marginTop: '20px',
+        background: 'rgba(70, 193, 164, 1)',
+        width: '100%',
+        height: '5%',
+        border: 'none',
+        borderRadius: '15px',
+        fontSize: '15px',
+        color: 'white',
+    },
+
+    link: {
+        color: 'white',
+        fontStyle: 'none',
+    },
+
 }));
 
 export default Main;
