@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/Taller1_webAdvan/static/js/main.74e5774e.chunk.js",
-    "main.js.map": "/Taller1_webAdvan/static/js/main.74e5774e.chunk.js.map",
+    "main.js": "/Taller1_webAdvan/static/js/main.a8773fc6.chunk.js",
+    "main.js.map": "/Taller1_webAdvan/static/js/main.a8773fc6.chunk.js.map",
     "runtime-main.js": "/Taller1_webAdvan/static/js/runtime-main.deb08f66.js",
     "runtime-main.js.map": "/Taller1_webAdvan/static/js/runtime-main.deb08f66.js.map",
     "static/js/2.32d52f24.chunk.js": "/Taller1_webAdvan/static/js/2.32d52f24.chunk.js",
     "static/js/2.32d52f24.chunk.js.map": "/Taller1_webAdvan/static/js/2.32d52f24.chunk.js.map",
     "index.html": "/Taller1_webAdvan/index.html",
-    "precache-manifest.1cb5b09bb1f760823fac56a0036f60bb.js": "/Taller1_webAdvan/precache-manifest.1cb5b09bb1f760823fac56a0036f60bb.js",
+    "precache-manifest.42b915cb7571d65a6de80fb23d4014a3.js": "/Taller1_webAdvan/precache-manifest.42b915cb7571d65a6de80fb23d4014a3.js",
     "service-worker.js": "/Taller1_webAdvan/service-worker.js"
   },
   "entrypoints": [
     "static/js/runtime-main.deb08f66.js",
     "static/js/2.32d52f24.chunk.js",
-    "static/js/main.74e5774e.chunk.js"
+    "static/js/main.a8773fc6.chunk.js"
   ]
 }

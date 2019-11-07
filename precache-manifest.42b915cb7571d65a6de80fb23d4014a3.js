@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "17efe70a16e98ec52a22abe73cc71e32",
+    "revision": "f4d142732c61a9a72877f4a766bf517c",
     "url": "/Taller1_webAdvan/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Taller1_webAdvan/static/js/2.32d52f24.chunk.js"
   },
   {
-    "revision": "eb2de56afd9349ff59f9",
-    "url": "/Taller1_webAdvan/static/js/main.74e5774e.chunk.js"
+    "revision": "fa68665bfc276a5ecf1c",
+    "url": "/Taller1_webAdvan/static/js/main.a8773fc6.chunk.js"
   },
   {
     "revision": "3494b09a6033361d2b06",
