@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/Jate099/Taller1_webAdvan/static/js/main.cdc1b70c.chunk.js",
-    "main.js.map": "/Jate099/Taller1_webAdvan/static/js/main.cdc1b70c.chunk.js.map",
-    "runtime-main.js": "/Jate099/Taller1_webAdvan/static/js/runtime-main.844964f4.js",
-    "runtime-main.js.map": "/Jate099/Taller1_webAdvan/static/js/runtime-main.844964f4.js.map",
-    "static/js/2.59acf770.chunk.js": "/Jate099/Taller1_webAdvan/static/js/2.59acf770.chunk.js",
-    "static/js/2.59acf770.chunk.js.map": "/Jate099/Taller1_webAdvan/static/js/2.59acf770.chunk.js.map",
-    "index.html": "/Jate099/Taller1_webAdvan/index.html",
-    "precache-manifest.a466a7d8801de58fd0605f510054ea10.js": "/Jate099/Taller1_webAdvan/precache-manifest.a466a7d8801de58fd0605f510054ea10.js",
-    "service-worker.js": "/Jate099/Taller1_webAdvan/service-worker.js"
+    "main.js": "/Taller1_webAdvan/static/js/main.75dfc32c.chunk.js",
+    "main.js.map": "/Taller1_webAdvan/static/js/main.75dfc32c.chunk.js.map",
+    "runtime-main.js": "/Taller1_webAdvan/static/js/runtime-main.deb08f66.js",
+    "runtime-main.js.map": "/Taller1_webAdvan/static/js/runtime-main.deb08f66.js.map",
+    "static/js/2.c0913c01.chunk.js": "/Taller1_webAdvan/static/js/2.c0913c01.chunk.js",
+    "static/js/2.c0913c01.chunk.js.map": "/Taller1_webAdvan/static/js/2.c0913c01.chunk.js.map",
+    "index.html": "/Taller1_webAdvan/index.html",
+    "precache-manifest.5b02330366c50f13d1f6b61456ec7661.js": "/Taller1_webAdvan/precache-manifest.5b02330366c50f13d1f6b61456ec7661.js",
+    "service-worker.js": "/Taller1_webAdvan/service-worker.js"
   },
   "entrypoints": [
-    "static/js/runtime-main.844964f4.js",
-    "static/js/2.59acf770.chunk.js",
-    "static/js/main.cdc1b70c.chunk.js"
+    "static/js/runtime-main.deb08f66.js",
+    "static/js/2.c0913c01.chunk.js",
+    "static/js/main.75dfc32c.chunk.js"
   ]
 }
